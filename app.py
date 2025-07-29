@@ -2,7 +2,7 @@ import os
 import json
 import pdfplumber
 import google.generativeai as genai
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Hello, Career Coach! The server is running."
+    return render_template('index.html')
 
 @app.route('/analyze', methods=['POST'])
 def analyze_resume():

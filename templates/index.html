@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Craft</title>
+</head>
+<body>
+    <h1>Career Craft</h1>
+    <p>Upload your resume (PDF only) to get instant career suggestions and skill analysis.</p>
+
+    <form id="resume-form">
+        <input type="file" id="resume-file" accept=".pdf" required>
+        <button type="submit">Analyze Resume</button>
+    </form>
+
+    <hr>
+
+    <div id="loader" style="display:none;">
+        <p>Analyzing... please wait.</p>
+    </div>
+
+    <div id="results"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
